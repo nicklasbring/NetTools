@@ -1,6 +1,7 @@
 package PortScanner;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
@@ -21,6 +22,10 @@ public class ClientController implements Listener {
     public void updateTextArea(String msg) {
         Platform.runLater(() ->
                 textArea_ClientResponse.appendText(msg + "\n"));
+
+    }
+
+    public void requestTime(ActionEvent actionEvent) {
 
     }
 }

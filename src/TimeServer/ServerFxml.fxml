@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TimeServer.ServerController">
+   <children>
+      <TextArea fx:id="textArea_serverResponse" disable="true" editable="false" layoutX="20.0" layoutY="21.0" prefHeight="358.0" prefWidth="557.0" />
+   </children>
+</AnchorPane>
