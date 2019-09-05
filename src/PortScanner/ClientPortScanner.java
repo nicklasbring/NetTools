@@ -9,10 +9,14 @@ public class ClientPortScanner implements Runnable{
    private String serverIP = "localhost";
    private int interval;
    private int startPort;
+   private Listener listener;
 
-    public ClientPortScanner(int startPort, int interval) {
+   String msg = "";
+
+    public ClientPortScanner(int startPort, int interval, Listener listener) {
         this.interval = interval;
         this.startPort = startPort;
+        this.listener = listener;
 
     }
 
@@ -27,12 +31,13 @@ public class ClientPortScanner implements Runnable{
 
             try {
                 socket = new Socket(serverIP, port);
-                System.out.println("\nPort: " + port + " Er åben på følgende ip: " + serverIP);
+                msg = "\nPort: " + port + " Er åben på følgende ip: " + serverIP;
+                listener.updateTextArea(msg);
+                System.out.println("Port: " + port + " Er åben på følgende ip: " + serverIP);
                 socket.close();
             } catch (IOException e) {
                 //empty catch
             }
         }
-
         }
     }
